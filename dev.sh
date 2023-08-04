@@ -23,6 +23,7 @@ apt install -y mingw-w64
 echo Dependencies installed, building ScareCrow
 go build ScareCrow.go
 echo Adding ScareCrow to PATH
+chown -R kali . 
 su $(logname) -c "echo 'export PATH=\$PATH:$(pwd)' >> /home/$(logname)/.zshrc"
 source /home/$(logname)/.zshrc 2>/dev/null
 echo Testing Installation, executing ScareCrow
