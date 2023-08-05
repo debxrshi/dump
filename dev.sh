@@ -27,4 +27,4 @@ chown -R $(logname) .
 su $(logname) -c "echo 'export PATH=\$PATH:$(pwd)' >> /home/$(logname)/.zshrc"
 source /home/$(logname)/.zshrc 2>/dev/null
 echo Testing Installation, executing ScareCrow
-exec /usr/bin/zsh -c ScareCrow
+exec $0 -c ScareCrow
