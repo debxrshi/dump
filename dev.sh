@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 git clone https://github.com/optiv/ScareCrow.git
 cd ScareCrow
-echo Installing go, requires sudo
+echo Installing go
 apt install -y golang-go
 echo go installed, installing packages
 go get github.com/fatih/color
