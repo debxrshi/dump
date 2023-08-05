@@ -8,7 +8,7 @@ fi
 git clone https://github.com/optiv/ScareCrow.git
 cd ScareCrow
 echo Installing go, requires sudo
-apt install -y golang
+apt install -y golang-go
 echo go installed, installing packages
 go get github.com/fatih/color
 go get github.com/yeka/zip
