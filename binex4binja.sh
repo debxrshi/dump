@@ -17,9 +17,10 @@ fi
 # Configuration
 
 CHANNEL=$1
-GIT_HASH=
-PLUGIN_SRC=
-PLUGIN_DST=
+BE_PATH="~/binexport"
+GIT_HASH=$(cat /Applications/Binary\ Ninja.app/Contents/Resources/api_REVISION.txt | awk -F'/' '{print $NF}')
+PLUGIN_SRC="~/binexport/build/binaryninja/binexport12_binaryninja.dylib"
+PLUGIN_DST="~/Library/Application\ Support/Binary\ Ninja/plugins/binexport12_binaryninja.dylib"
 CORES=$(sysctl -n hw.logicalcpu)
 
 # Checking dependencies
@@ -40,24 +41,25 @@ done
 # Confirming configuration
 
 echo -e "\nConfig\n"
-echo "HOME: $HOME"
-echo "BN_PATH: $BN_PATH"
+echo "BE_PATH: $BE_PATH"
 echo "GIT_HASH: $GIT_HASH"
 echo "CORES: $CORES"
 echo "BUILD: $CHANNEL"
+echo "PLUGIN_SRC: $PLUGIN_SRC"
+echo "PLUGIN_DST: $PLUGIN_DST"
 
 read "press Enter to continue"
 
 # Pull binexport 
 
 git pull https://github.com/google/binexport.git $HOME
-cd $HOME/binexport
+cd $BE_PATH
 
 # Changing CMakeDeps to update hash and adding macro to cmake.cc
 
 echo -e "[+] Updating hash and inserting macro\n"
 
-
+$BE_PATH/cmake/BinExportDeps.cmake
 
 # Building binexport
 
