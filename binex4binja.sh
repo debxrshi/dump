@@ -48,7 +48,7 @@ echo "BUILD: $CHANNEL"
 echo "PLUGIN_SRC: $PLUGIN_SRC"
 echo "PLUGIN_DST: $PLUGIN_DST"
 
-echo "Press Enter to continue"
+echo -e "\nPress Enter to continue"
 read
 
 # Pull binexport 
