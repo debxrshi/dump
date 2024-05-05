@@ -27,7 +27,7 @@ CORES=$(sysctl -n hw.logicalcpu)
 
 echo -e "[+] Checking dependencies\n"
 
-deps=("cmake","clang-format","ninja")
+deps=("cmake" "clang-format" "ninja")
 
 for dep in "${deps[@]}"; do
   if type "$dep" &> /dev/null; then
