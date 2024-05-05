@@ -49,8 +49,6 @@ then
     echo -e "\n Probing subdomains with httpx\n\n"
     httpx -l "${target}_subs" -fr -sc -title -td -server -retries 3 -fc 404 -lc -t 500 -o "${target}_subs_httpx"
 
-# asnmap
-
 # dnsx
 
 # katana
